@@ -23,23 +23,21 @@ public class TestController extends Controller {
 
     public Result hammerTest() {
         int[] s = new int[]{0};
-        for (int i = 0; i < 100; i++) {
-            Runnable task = () -> {
-                final WSRequest request = ws.url(ENDPOINT_URL);
-                int val = s[0]++ + 1507395745;
-                request.post(play.libs.Json.toJson(val + ",187.218.83.190,John.Smith,FAILURE")).thenApplyAsync(res -> {
-                    if (res.getStatus() == Http.Status.OK) {
-                        System.out.println(res.getBody().toString().isEmpty()? "Success": res.getBody().toString());
-                        logger.info(res.getBody().toString().isEmpty()? "Success": res.getBody().toString());
-                    } else {
-                        System.out.println(res.getStatus());
-                        logger.error(String.valueOf(res.getStatus()));
-                    }
-                    return true;
-                });
-            };
-            task.run();
+        for (int i = 0; i < 10; i++) {
+            final WSRequest request = ws.url(ENDPOINT_URL);
+            int val = s[0]++ + 1537395745;
+            request.post(play.libs.Json.toJson(val + ",199.218.83.190,John.Smith,FAILURE")).thenApplyAsync(res -> {
+                if (res.getStatus() == Http.Status.OK) {
+                    System.out.println(res.getBody().toString().isEmpty() ? "Success" : res.getBody().toString());
+                    logger.info(res.getBody().toString().isEmpty() ? "Success" : res.getBody().toString());
+                } else {
+                    System.out.println(res.getStatus());
+                    logger.error(String.valueOf(res.getStatus()));
+                }
+                return true;
+            });
         }
+        ;
         return ok("");
     }
 }

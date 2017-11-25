@@ -3,7 +3,10 @@ Assumption :
         Ex: 1507365137,187.218.83.136,John.Smith,SUCCESS
     - All events come in order by time. So I have search for failure logins during period of 5 minutes in past not including extra 5 minutes in future.
       If needed to receive them without order, then it's fine only we need to add extra filter and consider timestamp of event + 300 sec to check it as well
-
+Note: 
+    - If there many requests sent to server on parallel, server response based on current status and count he received so far.
+    as example server may have 3 failed and next one arrived due to latency in network the fifth before the forth. 
+    Then fifths will be normal but forth will be suspecious
 PreRequists as on mac:
       brew install sbt
       brew install cassandra
