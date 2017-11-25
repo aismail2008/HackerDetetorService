@@ -1,11 +1,11 @@
 package controllers;
 
+import com.booking.security.hackertest.detector.HackerDetectorService;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.Logger;
 import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Controller;
 import play.mvc.Result;
-import services.HackerDetectorService;
 
 import javax.inject.Inject;
 import java.util.concurrent.CompletableFuture;

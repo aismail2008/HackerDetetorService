@@ -1,11 +1,10 @@
+import com.booking.security.hackertest.detector.HackerDetectorService;
+import com.booking.security.hackertest.detector.impl.HackerDetectorServiceImpl;
 import com.datastax.driver.core.Session;
 import com.google.inject.AbstractModule;
-import org.redisson.api.RedissonClient;
 import repository.DataRepository;
 import repository.impl.CassandraSessionProvider;
 import repository.impl.LoginEventRepository;
-import services.HackerDetectorService;
-import services.impl.HackerDetectorServiceImpl;
 
 import javax.inject.Singleton;
 import java.time.Clock;

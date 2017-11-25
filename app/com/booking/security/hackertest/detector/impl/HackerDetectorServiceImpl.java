@@ -1,8 +1,8 @@
-package services.impl;
+package com.booking.security.hackertest.detector.impl;
 
+import com.booking.security.hackertest.detector.HackerDetectorService;
+import com.booking.security.hackertest.detector.LogStatusEnum;
 import repository.DataRepository;
-import services.HackerDetectorService;
-import services.LogStatusEnum;
 
 import javax.inject.Inject;
 import java.util.concurrent.CompletableFuture;

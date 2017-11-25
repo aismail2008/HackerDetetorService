@@ -1,6 +1,4 @@
-package services;
-
-import play.mvc.Http;
+package com.booking.security.hackertest.detector;
 
 import java.util.concurrent.CompletionStage;
 
