@@ -20,7 +20,8 @@ PreRequists as on mac:<br />
     then<br /> 
     -> sbt run<br /> 
     <br /> 
-  4- you can test endpoint by either postman or curl command as follow :<br /> 
-    curl -X POST http://localhost:9000/parselogline -H 'content-type: application/json' -d '"1907365745,187.218.83.190,John.Smith,FAILURE"'<br /> 
-  <br /> 
+  4- you can test endpoint by either postman or curl command as follow :
+    <br /> 
+    curl -X POST http://localhost:9000/parselogline -H 'content-type: application/json' -d '"1907365745,187.218.83.190,John.Smith,FAILURE"'
+    <br /> 
   5- I have added endpoint /test which run about 1000 parallel thread to hit server to make sure all requests are processed fine.<br /> 
