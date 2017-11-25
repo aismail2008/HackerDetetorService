@@ -1,0 +1,7 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+GET    /                    controllers.HackerDetector.healthCheck()
+GET    /healthcheck         controllers.HackerDetector.healthCheck()
+POST   /parselogline        controllers.HackerDetector.parseline()
+GET    /test                controllers.TestController.hammerTest()
