@@ -23,7 +23,7 @@ public class TestController extends Controller {
 
     public Result hammerTest() {
         int[] s = new int[]{0};
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             Runnable task = () -> {
                 final WSRequest request = ws.url(ENDPOINT_URL);
                 int val = s[0]++ + 1507395745;

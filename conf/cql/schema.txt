@@ -1,0 +1,13 @@
+For Dev and Stage:
+CREATE KEYSPACE "loginlogsdb" WITH REPLICATION = {'class':'SimpleStrategy', 'replication_factor':1};
+
+For Prod:
+CREATE KEYSPACE "loginlogsdb" WITH REPLICATION = {'class':'NetworkTopologyStrategy', 'eu-west':3 };
+
+CREATE TABLE loginevents
+(
+    ip TEXT,
+    timestamp BIGINT,
+    username TEXT
+    PRIMARY KEY(ip, timestamp)
+);

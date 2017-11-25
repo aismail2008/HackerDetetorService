@@ -1,8 +1,9 @@
+import com.datastax.driver.core.Session;
 import com.google.inject.AbstractModule;
 import org.redisson.api.RedissonClient;
 import repository.DataRepository;
-import repository.RedissonClientProvider;
-import repository.impl.DataRepositoryImpl;
+import repository.impl.CassandraSessionProvider;
+import repository.impl.LoginEventRepository;
 import services.HackerDetectorService;
 import services.impl.HackerDetectorServiceImpl;
 
@@ -29,9 +30,9 @@ public class Module extends AbstractModule {
         // application starts.
         //bind(ApplicationTimer.class).asEagerSingleton();
         // Set HackerDetectorServiceImpl as the implementation for HackerDetectorService.
+        bind(Session.class).toProvider(CassandraSessionProvider.class).in(Singleton.class);
         bind(HackerDetectorService.class).to(HackerDetectorServiceImpl.class);
-        bind(RedissonClient.class).toProvider(RedissonClientProvider.class).in(Singleton.class);
-        bind(DataRepository.class).to(DataRepositoryImpl.class).in(Singleton.class);
+        bind(DataRepository.class).to(LoginEventRepository.class).in(Singleton.class);
     }
 
 }

@@ -1,8 +1,9 @@
 package repository;
 
 import java.util.SortedSet;
+import java.util.concurrent.CompletionStage;
 
 public interface DataRepository {
-    void setData(String key, Long data);
-    SortedSet<Long> getData(String key);
+    CompletionStage<Boolean> setData(String ip, Long timestamp, String username);
+    CompletionStage<Long> getLoginEvents(String ip, Long timestamp);
 }

@@ -31,6 +31,10 @@ public class HackerDetector extends Controller {
         return CompletableFuture.completedFuture(ok(data));
     }
 
+    /**
+     * Body will contain the line in format as  specified in the email
+     * @return emtpy string or suspicious IP
+     */
     public CompletionStage<Result> parseline() {
         logger.info("Request Receive");
         final JsonNode json = request().body().asJson();
