@@ -1,5 +1,6 @@
 Assumption :
-    - All inputs will be in the format of <date in the epoch format>,<IP>,<Username>,<SUCCESS or FAILURE> as json in payload of request
+<br />
+    - All inputs will be in the format of [Date in the epoch format,IP,Username,SUCCESS or FAILURE] as json in payload of request
         Ex: 1507365137,187.218.83.136,John.Smith,SUCCESS
     - All events come in order by time. So I have search for failure logins during period of 5 minutes in past not including extra 5 minutes in future.
       If needed to receive them without order, then it's fine only we need to add extra filter and consider timestamp of event + 300 sec to check it as well
